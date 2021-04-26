@@ -54,7 +54,7 @@
 
 /* ************PHONE************ */
 @media screen and (max-width: 700px) {
-	.main-section{
+    .main-section{
         height: 45vh;
         flex-direction: column;
         justify-content:space-around;
