@@ -28,6 +28,16 @@
     background-color: chartreuse;
 }
 
+.sub-main {
+    width: 45%;
+}
+.left-side {
+    background-color: darkmagenta;
+}
+.right-side {
+    background-color: darkolivegreen;
+}
+
 /********************
  * FOOTER/INFO AREA *
  ********************/
