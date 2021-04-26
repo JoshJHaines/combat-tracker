@@ -12,6 +12,7 @@ const initiative = document.getElementById("initiative")
  * OTHER GLOBAL VARIABLES *
  **************************/
  let initiativeList = []
+ let orderedInit = []
 
 /******************
  * EVENT LISTENER *
@@ -35,5 +36,24 @@ function addToInitiativeList (){
             // console.log(initiativeObj)
 //push the obj into global variable
     initiativeList.push(initiativeObj)
-            console.log(initiativeList)
+            console.log("Unordered Initiative: ", initiativeList)
+            orderInitiative(initiativeList)
+}
+
+function orderInitiative(obj) {
+    //create temp arr
+    newInitiative = []
+
+    //sort through by the initiative roll
+    obj.sort((a,b) => {
+        return parseInt(b.initiativeRoll - a.initiativeRoll)
+    })
+    //once sorted we want to place each into the new arr
+    obj.forEach((e) => {
+        newInitiative.push(e)
+                    //console.log(`${e.characterName} ${e.characterType} ${e.initiativeRoll}`)
+    })
+    //set the global arr to equal the new temp arr
+    orderedInit = newInitiative
+                    //console.log("Ordered Init: ", orderedInit)
 }
