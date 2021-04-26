@@ -6,6 +6,7 @@ const initiativeButton = document.getElementById("addToInit");
 const characterName = document.getElementById("characterName");
 const characterType = document.getElementById("chartype");
 const initiative = document.getElementById("initiative");
+const resetInitButton = document.getElementById("resetInit");
 
 /**************************
  * OTHER GLOBAL VARIABLES *
@@ -18,6 +19,7 @@ let orderedInit = [];
  ******************/
 
 initiativeButton.addEventListener("click", addToInitiativeList);
+resetInitButton.addEventListener("click", resetInit);
 
 /********************
  * HELPER FUNCTIONS *
@@ -55,5 +57,11 @@ function orderInitiative(obj) {
 	});
 	//set the global arr to equal the new temp arr
 	orderedInit = newInitiative;
-	//console.log("Ordered Init: ", orderedInit)
+	console.log("Ordered Init: ", orderedInit);
+}
+
+function resetInit() {
+	unOrderedInit = [];
+	orderedInit = [];
+	console.log("Ordered Init: ", orderedInit);
 }
