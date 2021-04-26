@@ -12,7 +12,22 @@
         <h1>Combat Tracker</h1>
     </div>
     <div id="top" class="main-section">
-        <div id="initiative-tracker" class="left-side sub-main">Initiative Tracker</div>
+        <div id="initiative-tracker" class="left-side sub-main">
+            <h3>
+                Initiative Tracker
+            </h3>
+            <form action="">
+                <input type="text" id="characterName">
+                <select name="characterType" id="chartype">
+                    <option value="pc">PC</option>
+                    <option value="npc">NPC</option>
+                </select>
+                <input type="number" id="initiative">
+                <input type="submit" value="Add to initiative">
+
+            </form>
+                
+        </div>
         <div id="damage-tracker" class="right-side sub-main">Damage Tracker</div>
     </div>
     <div id="bottom" class="main-section">
