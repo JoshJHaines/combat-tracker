@@ -1,0 +1,1 @@
+const characterTypes = ["pc", "npc"];
