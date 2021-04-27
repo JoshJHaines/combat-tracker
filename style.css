@@ -1,73 +1,70 @@
 :root {
-    --color1: #fcba04;
-    --color2: #a50104;
-    --color3: #590004;
-    --color4: #250001;
-    --color5: #0b090a;
-    --color6: #f3f3f3;
-    --color7: #8d99ae;
-  }
+	--color1: #fcba04;
+	--color2: #a50104;
+	--color3: #590004;
+	--color4: #250001;
+	--color5: #0b090a;
+	--color6: #f3f3f3;
+	--color7: #8d99ae;
+}
 
 * {
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
 }
 /******************
  * STATIC TOP BAR *
  ******************/
 #header {
-    background-color: var(--color5);
-    height: 5vh;
+	background-color: var(--color5);
+	height: 5vh;
 }
 h1 {
-    color: var(--color1);
-    -webkit-text-stroke: 1px var(--color2);
+	color: var(--color1);
+	-webkit-text-stroke: 1px var(--color2);
 }
 
 /************************
  * MAIN PORTION OF PAGE *
  ************************/
-.main-section{
-    height: 45vh;
-    display: flex;
-    justify-content: space-evenly;
+.main-section {
+	height: 45vh;
+	display: flex;
+	justify-content: space-evenly;
 }
 h3 {
-    color: var(--color1);
-    /* -webkit-text-stroke: 1px var(--color1); */
+	color: var(--color1);
+	/* -webkit-text-stroke: 1px var(--color1); */
 }
 
 #top {
-    background-color: var(--color7);
-
+	background-color: var(--color7);
 }
 #bottom {
-    background-color: var(--color3);
+	background-color: var(--color3);
 }
 
 .sub-main {
-    width: 45%;
-    /* display: flex;
+	width: 45%;
+	/* display: flex;
     flex-direction:column ; */
 }
 .left-side {
-    /* background-color: darkmagenta; */
-    border: 1px solid var(--color1);
+	/* background-color: darkmagenta; */
+	border: 1px solid var(--color1);
 }
 .right-side {
-    background-color: darkolivegreen;
+	background-color: darkolivegreen;
 }
 
 /********************
  * FOOTER/INFO AREA *
  ********************/
 #footer {
-    background-color: var(--color1);
-    height: 5vh;
+	background-color: var(--color1);
+	height: 5vh;
 }
-
-
 
 /*****************
  * MOBILE DESIGN *
@@ -75,15 +72,14 @@ h3 {
 
 /* ************PHONE************ */
 @media screen and (max-width: 700px) {
-    .main-section{
-        height: 45vh;
-        flex-direction: column;
-        justify-content:space-around;
-        align-items: center;
-    }
-    .sub-main {
-        width: 90%;
-        height: 45%;
-    }
-    
+	.main-section {
+		height: 45vh;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.sub-main {
+		width: 90%;
+		height: 45%;
+	}
 }
