@@ -105,14 +105,18 @@ function addToDamageList (){
     if (atkSuccess.value === "no"){
         dmgObj.atkSuccess = atkSuccess.value;
         dmgObj.atkType = "none";
-        dmgObj.dmgInflicted = 0;
-        dmgObj.dmgType = "none";
+        dmgObj.dmg1Inflicted = 0;
+        dmgObj.dmg1Type = "none";
+        dmgObj.dmg2Inflicted = 0;
+        dmgObj.dmg2Type = "none";
         dmgObj.killSuccess = "no";
     } else {
         dmgObj.atkSuccess = atkSuccess.value;
         dmgObj.atkType = atkType.value;
-        dmgObj.dmgInflicted = dmgInflicted.value;
-        dmgObj.dmgType = dmgType.value;
+        dmgObj.dmg1Inflicted = dmg1Inflicted.value;
+        dmgObj.dmg1Type = dmg1Type.value;
+        dmgObj.dmg2Inflicted = dmg2Inflicted.value;
+        dmgObj.dmg2Type = dmg2Type.value;
         dmgObj.killSuccess = killSuccess.value;
     }
 	console.log(dmgObj)
