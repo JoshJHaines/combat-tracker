@@ -70,8 +70,18 @@ function resetInit() {
 }
 
 function buildInitTable(orderedInit){
-    initTable.innerText = `<tr><th>Character</th><th>Type</th><th>Init</th>`;
+    // row = table.insertRow(0)
+    // nameCell = row.insertCell(0)
+    // charTypeCell = row.insertCell(1)
+    // initRollCell = row.insertCell(2)
     for(char of orderedInit){
-        initTable.innerText += `<tr><td>${char.characterName}</td><td>${char.characterType}</td><td>${char.initiativeRoll}</td>`
+        row = initTable.insertRow(0)
+        nameCell = row.insertCell(0)
+        charTypeCell = row.insertCell(1)
+        initRollCell = row.insertCell(2)
+        
+        nameCell.innerHTML = `${char.characterName}`
+        charTypeCell.innerHTML = `${char.characterType}`
+        initRollCell.innerHTML = `${char.initiativeRoll}`
     }
 }
