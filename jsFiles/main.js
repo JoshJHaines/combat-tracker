@@ -1,7 +1,7 @@
 /*************
  * SELECTORS *
  *************/
-
+/* INITIATIVE TRACKER */
 const initiativeButton = document.getElementById("addToInit");
 const characterName = document.getElementById("characterName");
 const characterType = document.getElementById("chartype");
@@ -9,11 +9,16 @@ const initiative = document.getElementById("initiative");
 const initTable = document.getElementById('initTable')
 const resetInitButton = document.getElementById("resetInit");
 
+/* DAMAGE TRACKER */
+const addDamageButton = document.getElementById("addToDmg");
+
 /**************************
  * OTHER GLOBAL VARIABLES *
  **************************/
 let unOrderedInit = [];
 let orderedInit = [];
+
+let dmgList = []
 
 /******************
  * EVENT LISTENER *
@@ -21,6 +26,8 @@ let orderedInit = [];
 
 initiativeButton.addEventListener("click", addToInitiativeList);
 resetInitButton.addEventListener("click", resetInit);
+
+addDamageButton.addEventListener("click", addToDamageList);
 
 /********************
  * HELPER FUNCTIONS *
@@ -84,4 +91,32 @@ function buildInitTable(orderedInit){
         charTypeCell.innerHTML = `${char.characterType}`
         initRollCell.innerHTML = `${char.initiativeRoll}`
     }
+}
+
+function addToDamageList (){
+                // console.log("Add to Damage Tracker")
+                // console.log("Attack Successful: ", atkSuccess.value)
+                // console.log("Attack Type: ", atkType.value)
+                // console.log("Damage Inflicted: ", dmgInflicted.value)
+                // console.log("Damage Type: ", dmgType.value)
+                // console.log("Was Kill: ", killSuccess.value)
+
+    let dmgObj = {};
+    if (atkSuccess.value === "no"){
+        dmgObj.atkSuccess = atkSuccess.value;
+        dmgObj.atkType = "none";
+        dmgObj.dmgInflicted = 0;
+        dmgObj.dmgType = "none";
+        dmgObj.killSuccess = "no";
+    } else {
+        dmgObj.atkSuccess = atkSuccess.value;
+        dmgObj.atkType = atkType.value;
+        dmgObj.dmgInflicted = dmgInflicted.value;
+        dmgObj.dmgType = dmgType.value;
+        dmgObj.killSuccess = killSuccess.value;
+    }
+	console.log(dmgObj)
+	//push the obj into global variable
+	dmgList.push(dmgObj);
+    console.log ("full dmg lst:", dmgList)
 }
