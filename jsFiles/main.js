@@ -41,6 +41,8 @@ function addToInitiativeList() {
 	//console.log("Unordered Initiative: ", unOrderedInit)
 	//use function to order the initiative
 	orderInitiative(unOrderedInit);
+
+    buildInitTable(orderedInit)
 }
 
 function orderInitiative(obj) {
@@ -67,6 +69,9 @@ function resetInit() {
 	console.log("Ordered Init: ", orderedInit);
 }
 
-function buildInitTable(){
-    
+function buildInitTable(orderedInit){
+    initTable.innerText = `<tr><th>Character</th><th>Type</th><th>Init</th>`;
+    for(char of orderedInit){
+        initTable.innerText += `<tr><td>${char.characterName}</td><td>${char.characterType}</td><td>${char.initiativeRoll}</td>`
+    }
 }
