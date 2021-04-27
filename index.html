@@ -28,7 +28,34 @@
 
                 
         </div>
-        <div id="damage-tracker" class="right-side sub-main">Damage Tracker</div>
+        <div id="damage-tracker" class="right-side sub-main">
+            <h3> 
+                Damage Tracker
+            </h3>
+            <label for="atkSuccess">Attack Success: </label>
+            <select name="atkSuccess" id="atkSuccess">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select>
+            <label for="atkType">Attack Type: </label>
+            <select name="atkType" id="atkType">
+                <option value=""></option>
+            </select>
+            <label for="damageInflicted">Damage: </label>
+            <input type="number" id="damageInflicted">
+            <label for="dmgType">Damage Type: </label>
+            <select name="dmgType" id="dmgType">
+                <option value=""></option>
+            </select>
+            <label for="killSuccess">Kill: </label>
+            <select name="killSuccess" id="killSuccess">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select>
+            <input type="submit" id="addToDmg" value="Add Damage">
+
+        </div>
+                
     </div>
     <div id="bottom" class="main-section">
         <div id="score-board" class="left-side sub-main">Scoreboard</div>
