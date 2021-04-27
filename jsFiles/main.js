@@ -42,7 +42,7 @@ function addToInitiativeList() {
 	//use function to order the initiative
 	orderInitiative(unOrderedInit);
 
-    buildInitTable(orderedInit)
+   // buildInitTable(orderedInit)
 }
 
 function orderInitiative(obj) {
