@@ -140,7 +140,7 @@ function createDropDown(dataSet, listenter) {
 /***********
  * ON LOAD *
  ***********/
-
+createDropDown(CHARACTERTYPES, characterType);
 createDropDown(ATTACKTYPES, atkTypeSelect);
 createDropDown(DAMAGETYPES, dmg1TypeSelect);
 createDropDown(DAMAGETYPES, dmg2TypeSelect);
