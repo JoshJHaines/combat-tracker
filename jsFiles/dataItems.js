@@ -1,19 +1,25 @@
-const CHARACTERTYPES = ["pc", "npc"];
+const CHARACTERTYPES = [
+    {type: "pc"},
+    {type: "npc"}];
 
-const ATTACKTYPES = ["melee", "ranged", "spell"];
+const ATTACKTYPES = [
+    {type: "melee"}, 
+    {type: "ranged"}, 
+    {type: "spell"}
+];
 
 const DAMAGETYPES = [
-	"acid",
-	"bludgeoning",
-	"cold",
-	"fire",
-	"force",
-	"lightning",
-	"necrotic",
-	"piercing",
-	"poison",
-	"psychic",
-	"radiant",
-	"slashing",
-	"thunder",
+    {type: "acid"},
+    {type: "bludgeoning"},
+    {type: "fire"},
+    {type: "force"},
+    {type: "frost"},
+    {type: "lightning"},
+    {type: "necrotic"},
+    {type: "piercing"},
+    {type: "poison"},
+    {type: "psychic"},
+    {type: "radiant"},
+    {type: "slashing"},
+    {type: "thunder"}
 ];
