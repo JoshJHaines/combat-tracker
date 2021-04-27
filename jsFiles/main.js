@@ -6,6 +6,7 @@ const initiativeButton = document.getElementById("addToInit");
 const characterName = document.getElementById("characterName");
 const characterType = document.getElementById("chartype");
 const initiative = document.getElementById("initiative");
+const initTable = document.getElementById('initTable')
 const resetInitButton = document.getElementById("resetInit");
 
 /**************************
@@ -64,4 +65,8 @@ function resetInit() {
 	unOrderedInit = [];
 	orderedInit = [];
 	console.log("Ordered Init: ", orderedInit);
+}
+
+function buildInitTable(){
+    
 }
