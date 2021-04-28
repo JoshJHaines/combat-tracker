@@ -31,11 +31,24 @@ let dmgList = [];
 // Define a global currentInit variable
 let currentInit = 0;
 
-// Check local storage for a previous currentInit
-let storedCurrentInit = localStorage.getItem('currentInit');
+function loadLocalStorageInitPosition() {
+	// Check local storage for a previous currentInit
+	let storedCurrentInit = localStorage.getItem("currentInit");
 
-if (storedCurrentInit !== null) {
-    currentInit = parseInt(storedCurrentInit);   
+	if (storedCurrentInit !== null) {
+		currentInit = parseInt(storedCurrentInit);
+	}
+	// Store the new currentInit
+	localStorage.setItem("currentInit", currentInit);
 }
-// Store the new currentInit
-localStorage.setItem('currentInit', currentInit);
+
+function loadLocalStorageInitList() {
+	// Check local storage for a previous currentInit
+	let storedOrderedInit = localStorage.getItem("orderedInit");
+
+	if (storedOrderedInit !== null) {
+		orderedInit = storedOrderedInit;
+	}
+	// Store the new currentInit
+	localStorage.setItem("orderedInit", orderedInit);
+}
