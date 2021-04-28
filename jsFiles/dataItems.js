@@ -32,17 +32,10 @@ let dmgList = [];
 let currentInit = 0;
 
 // Check local storage for a previous currentInit
-const storedCurrentInit = localStorage.getItem('count');
+let storedCurrentInit = localStorage.getItem('currentInit');
+
 if (storedCurrentInit !== null) {
-    count = parseInt(storedCurrentInit);   
+    currentInit = parseInt(storedCurrentInit);   
 }
-
-// Add one to currentInit
-//currentInit++;
-
 // Store the new currentInit
 localStorage.setItem('currentInit', currentInit);
-
-// Display currentInit on the DOM
-//moved to initiative js
-// document.querySelector('h1').innerText = currentInit;
