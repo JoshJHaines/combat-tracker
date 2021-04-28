@@ -9,9 +9,9 @@ const dmg2TypeSelect = document.getElementById("dmg2Type");
 /******************
  * EVENT LISTENER *
  ******************/
- addDamageButton.addEventListener("click", addToDamageList);
+addDamageButton.addEventListener("click", addToDamageList);
 
- /********************
+/********************
  * HELPER FUNCTIONS *
  ********************/
 function addToDamageList() {
@@ -24,7 +24,7 @@ function addToDamageList() {
 
 	let dmgObj = {};
 	if (atkSuccess.value === "no") {
-		dmgObj.characterName = currentPlayer
+		dmgObj.characterName = currentPlayer;
 		dmgObj.atkSuccess = atkSuccess.value;
 		dmgObj.atkType = "none";
 		dmgObj.dmg1Inflicted = 0;
@@ -33,7 +33,7 @@ function addToDamageList() {
 		dmgObj.dmg2Type = "none";
 		dmgObj.killSuccess = "no";
 	} else {
-		dmgObj.characterName = currentPlayer
+		dmgObj.characterName = currentPlayer;
 		dmgObj.atkSuccess = atkSuccess.value;
 		dmgObj.atkType = atkType.value;
 		dmgObj.dmg1Inflicted = dmg1Inflicted.value;

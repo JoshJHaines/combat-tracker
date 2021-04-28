@@ -14,15 +14,15 @@ const resetInitButton = document.getElementById("resetInit");
  * EVENT LISTENER *
  ******************/
 
- initiativeButton.addEventListener("click", addToInitiativeList);
- nextInitButton.addEventListener("click", nextInit);
- resetInitButton.addEventListener("click", resetInit);
+initiativeButton.addEventListener("click", addToInitiativeList);
+nextInitButton.addEventListener("click", nextInit);
+resetInitButton.addEventListener("click", resetInit);
 
 /*************
  * FUNCTIONS *
  *************/
 
- function addToInitiativeList() {
+function addToInitiativeList() {
 	// console.log("Add Character to Initiative Tracker")
 	// console.log("Character Name: ", characterName.value)
 	// console.log("Character Type: ", characterType.value)
@@ -87,19 +87,16 @@ function nextInit() {
 	console.log("clicked");
 	console.log(
 		"Current Init =: ",
-		currentInit+1,"Current Players Turn: ",
+		currentInit + 1,
+		"Current Players Turn: ",
 		orderedInit[currentInit].characterName
-	)
-	console.log(
-		
-	)
-	currentPlayer = orderedInit[currentInit].characterName
-	if (currentInit < orderedInit.length-1){
-		currentInit++
-		console.log(
-		currentInit+1
-			)
+	);
+	console.log();
+	currentPlayer = orderedInit[currentInit].characterName;
+	if (currentInit < orderedInit.length - 1) {
+		currentInit++;
+		console.log(currentInit + 1);
 	} else {
-		currentInit = 0
-	};
+		currentInit = 0;
+	}
 }
