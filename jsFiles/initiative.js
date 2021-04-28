@@ -23,23 +23,15 @@ resetInitButton.addEventListener("click", resetInit);
  *************/
 
 function addToInitiativeList() {
-	// console.log("Add Character to Initiative Tracker")
-	// console.log("Character Name: ", characterName.value)
-	// console.log("Character Type: ", characterType.value)
-	// console.log("Initiative Roll: ", initiative.value)
 	//create an object with the input values in initiative tracker fields
 	let initiativeObj = {};
 	initiativeObj.characterName = characterName.value;
 	initiativeObj.characterType = characterType.value;
 	initiativeObj.initiativeRoll = initiative.value;
-	// console.log(initiativeObj)
 	//push the obj into global variable
 	unOrderedInit.push(initiativeObj);
-	//console.log("Unordered Initiative: ", unOrderedInit)
 	//use function to order the initiative
 	orderInitiative(unOrderedInit);
-
-	// buildInitTable(orderedInit)
 }
 
 function orderInitiative(obj) {
@@ -65,12 +57,8 @@ function resetInit() {
 	orderedInit = [];
 	console.log("Ordered Init: ", orderedInit);
 }
-
+//doesnt work yet, not being called
 function buildInitTable(orderedInit) {
-	// row = table.insertRow(0)
-	// nameCell = row.insertCell(0)
-	// charTypeCell = row.insertCell(1)
-	// initRollCell = row.insertCell(2)
 	for (char of orderedInit) {
 		row = initTable.insertRow(0);
 		nameCell = row.insertCell(0);
@@ -84,15 +72,15 @@ function buildInitTable(orderedInit) {
 }
 
 function nextInit() {
-	console.log("clicked");
 	console.log(
-		"Current Init =: ",
+		"Current Init = ",
 		currentInit + 1,
 		"Current Players Turn: ",
 		orderedInit[currentInit].characterName
 	);
-	console.log();
+	//set the current player to the name of the CurrentInitOBJ 
 	currentPlayer = orderedInit[currentInit].characterName;
+	//then we want to increment the number for the current initiative position
 	if (currentInit < orderedInit.length - 1) {
 		currentInit++;
 		console.log(currentInit + 1);
