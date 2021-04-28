@@ -23,3 +23,13 @@ const DAMAGETYPES = [
     {type: "slashing"},
     {type: "thunder"}
 ];
+
+/**************************
+ * OTHER GLOBAL VARIABLES *
+ **************************/
+ let unOrderedInit = [];
+ let orderedInit = [];
+ let currentInit = 0;
+ let currentPlayer = "";
+ 
+ let dmgList = [];
