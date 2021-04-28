@@ -7,6 +7,7 @@ const characterName = document.getElementById("characterName");
 const characterType = document.getElementById("chartype");
 const initiative = document.getElementById("initiative");
 const initTable = document.getElementById("initTable");
+const nextInitButton = document.getElementById("nextInit");
 const resetInitButton = document.getElementById("resetInit");
 
 /* DAMAGE TRACKER */
@@ -20,6 +21,8 @@ const dmg2TypeSelect = document.getElementById("dmg2Type");
  **************************/
 let unOrderedInit = [];
 let orderedInit = [];
+let currentInit = 0;
+let currentPlayer = "";
 
 let dmgList = [];
 
@@ -28,6 +31,7 @@ let dmgList = [];
  ******************/
 
 initiativeButton.addEventListener("click", addToInitiativeList);
+nextInitButton.addEventListener("click", nextInit);
 resetInitButton.addEventListener("click", resetInit);
 
 addDamageButton.addEventListener("click", addToDamageList);
@@ -129,12 +133,31 @@ function addToDamageList() {
 }
 
 function createDropDown(dataSet, listenter) {
-
-    for (index of dataSet) {
-        let option = document.createElement("option");
+	for (index of dataSet) {
+		let option = document.createElement("option");
 		option.text = `${index.type}`;
 		listenter.add(option);
 	}
+}
+
+function nextInit() {
+	console.log("clicked");
+	console.log(
+		"Current Init =: ",
+		currentInit+1,"Current Players Turn: ",
+		orderedInit[currentInit].characterName
+	)
+	console.log(
+		
+	)
+	if (currentInit < orderedInit.length-1){
+		currentInit++
+		console.log(
+		currentInit+1
+			)
+	} else {
+		currentInit = 0
+	};
 }
 
 /***********
