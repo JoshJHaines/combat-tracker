@@ -58,7 +58,13 @@ function orderInitiative(obj) {
 function resetInit() {
 	unOrderedInit = [];
 	orderedInit = [];
+	currentPlayer = ""
 	console.log("Ordered Init: ", orderedInit);
+	currentInit = 0;
+	localStorage.setItem('currentInit', currentInit);
+	document.getElementById(
+		"currentInitPosition"
+	).innerText = `Current Init Pos: ${localStorage.currentInit}  Current Player: ${currentPlayer}  `;
 }
 //doesnt work yet, not being called
 function buildInitTable(orderedInit) {
@@ -83,21 +89,24 @@ function nextInit() {
 	);
 	console.log(
 		"Current storedInit = ",
-		localStorage.currentInit + 1,
+		Number(localStorage.currentInit) + 1,
 		"Current Players Turn: ",
 		orderedInit[currentInit].characterName
 	);
 	
+	//set the current player to the name of the CurrentInitOBJ
+	currentPlayer = orderedInit[currentInit].characterName;
+	
 	//set screen to display init
 	document.getElementById(
 		"currentInitPosition"
-	).innerText = `Current Init Pos: ${currentInit + 1}`;
-	//set the current player to the name of the CurrentInitOBJ
-	currentPlayer = orderedInit[currentInit].characterName;
+	).innerText = `Current Init Pos: ${Number(localStorage.currentInit)+1}  Current Player: ${currentPlayer}  `;
 	//then we want to increment the number for the current initiative position
 	if (currentInit < orderedInit.length - 1) {
 		currentInit++;
+		localStorage.setItem('currentInit', currentInit);
 	} else {
 		currentInit = 0;
+		localStorage.setItem('currentInit', currentInit);
 	}
 }
