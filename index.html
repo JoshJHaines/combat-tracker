@@ -13,18 +13,32 @@
     </div>
     <div id="top" class="main-section">
         <div id="initiative-tracker" class="left-side sub-main">
-            <h3>
-                Initiative Tracker
-            </h3>
+            <section>
+                <h3>
+                    Initiative Tracker
+                </h3>
+            </section>
+            <section>
+                <label for="characterName">Character:</label>
                 <input type="text" id="characterName">
+            </section>
+            <section>
+                <label for="chartype">Type:</label>
                 <select name="characterType" id="chartype">
-                </select>
-                <input type="number" id="initiative">
-                <input type="submit" id="addToInit" value="Add to initiative">
+            </section>
+            <section id="hideMe">
+                <label for="initiative">Init Roll:</label>
+                <input type="number" class="numInput" id="initiative">   
+            </section>
+            <section>
+                <label for="initiative">Init Roll:</label>
+                <input type="number" class="numInput" id="initiative">
+            </section>
+            <section>
+                <input type="submit" id="addToInit" value="Add to initiative">    
+            </select>
                 <table id="initTable"></table>
                 <button id="resetInit">Reset Initiative</button>
-
-                
         </div>
         <div id="damage-tracker" class="right-side sub-main">
             <h3> 
@@ -39,12 +53,12 @@
             <select name="atkType" id="atkType">
             </select>
             <label for="dmg1Inflicted">Damage 1: </label>
-            <input type="number" id="dmg1Inflicted">
+            <input type="number" class="numInput" id="dmg1Inflicted">
             <label for="dmg1Type">Damage 1 Type: </label>
             <select name="dmg1Type" id="dmg1Type">
             </select>
             <label for="dmg2Inflicted">Damage 2: </label>
-            <input type="number" id="dmg2Inflicted">
+            <input type="number" class="numInput" id="dmg2Inflicted">
             <label for="dmg2Type">Damage 2 Type: </label>
             <select name="dmg2Type" id="dmg2Type">
                 <option value="none">none</option>
