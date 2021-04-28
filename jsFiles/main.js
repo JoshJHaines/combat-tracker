@@ -110,6 +110,7 @@ function addToDamageList() {
 
 	let dmgObj = {};
 	if (atkSuccess.value === "no") {
+		dmgObj.characterName = currentPlayer
 		dmgObj.atkSuccess = atkSuccess.value;
 		dmgObj.atkType = "none";
 		dmgObj.dmg1Inflicted = 0;
@@ -118,6 +119,7 @@ function addToDamageList() {
 		dmgObj.dmg2Type = "none";
 		dmgObj.killSuccess = "no";
 	} else {
+		dmgObj.characterName = currentPlayer
 		dmgObj.atkSuccess = atkSuccess.value;
 		dmgObj.atkType = atkType.value;
 		dmgObj.dmg1Inflicted = dmg1Inflicted.value;
@@ -150,6 +152,7 @@ function nextInit() {
 	console.log(
 		
 	)
+	currentPlayer = orderedInit[currentInit].characterName
 	if (currentInit < orderedInit.length-1){
 		currentInit++
 		console.log(
