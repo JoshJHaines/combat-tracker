@@ -10,6 +10,9 @@ const initTable = document.getElementById("initTable");
 const nextInitButton = document.getElementById("nextInit");
 const resetInitButton = document.getElementById("resetInit");
 
+document.getElementById(
+	"currentInitPosition"
+).innerText = `Current Init Pos: ${currentInit}`;
 /******************
  * EVENT LISTENER *
  ******************/
@@ -73,17 +76,27 @@ function buildInitTable(orderedInit) {
 
 function nextInit() {
 	console.log(
-		"Current Init = ",
+		"Current local-Init = ",
 		currentInit + 1,
 		"Current Players Turn: ",
 		orderedInit[currentInit].characterName
 	);
-	//set the current player to the name of the CurrentInitOBJ 
+	console.log(
+		"Current storedInit = ",
+		localStorage.currentInit + 1,
+		"Current Players Turn: ",
+		orderedInit[currentInit].characterName
+	);
+	
+	//set screen to display init
+	document.getElementById(
+		"currentInitPosition"
+	).innerText = `Current Init Pos: ${currentInit + 1}`;
+	//set the current player to the name of the CurrentInitOBJ
 	currentPlayer = orderedInit[currentInit].characterName;
 	//then we want to increment the number for the current initiative position
 	if (currentInit < orderedInit.length - 1) {
 		currentInit++;
-		console.log(currentInit + 1);
 	} else {
 		currentInit = 0;
 	}
