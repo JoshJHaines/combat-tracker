@@ -50,31 +50,33 @@ function nextInit() {
 		"Current Players Turn: ",
 		orderedInit[currentInit].characterName
 	);
-	
+
 	//set the current player to the name of the CurrentInitOBJ
 	currentPlayer = orderedInit[currentInit].characterName;
-	
+
 	//set screen to display init
 	document.getElementById(
 		"currentInitPosition"
-	).innerText = `Current Init Pos: ${Number(localStorage.currentInit)+1}  Current Player: ${currentPlayer}  `;
+	).innerText = `Current Init Pos: ${
+		Number(localStorage.currentInit) + 1
+	}  Current Player: ${currentPlayer}  `;
 	//then we want to increment the number for the current initiative position
 	if (currentInit < orderedInit.length - 1) {
 		currentInit++;
-		localStorage.setItem('currentInit', currentInit);
+		localStorage.setItem("currentInit", currentInit);
 	} else {
 		currentInit = 0;
-		localStorage.setItem('currentInit', currentInit);
+		localStorage.setItem("currentInit", currentInit);
 	}
 }
 
 function resetInit() {
 	unOrderedInit = [];
 	orderedInit = [];
-	currentPlayer = ""
+	currentPlayer = "";
 	console.log("Ordered Init: ", orderedInit);
 	currentInit = 0;
-	localStorage.setItem('currentInit', currentInit);
+	localStorage.setItem("currentInit", currentInit);
 	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
 	document.getElementById(
 		"currentInitPosition"
@@ -102,7 +104,10 @@ function orderInitiative(obj) {
 	//store in local storage
 	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
 
-	console.log("Stored Init List: ", JSON.parse(localStorage.getItem("orderedInit") || "[]"));
+	console.log(
+		"Stored Init List: ",
+		JSON.parse(localStorage.getItem("orderedInit") || "[]")
+	);
 }
 
 //doesn't work yet, not being called
@@ -118,4 +123,3 @@ function buildInitTable(orderedInit) {
 		initRollCell.innerHTML = `${char.initiativeRoll}`;
 	}
 }
-
