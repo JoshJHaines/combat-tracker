@@ -1,3 +1,7 @@
+/*****************
+ * STANDARD DATA *
+ *****************/
+
 const CHARACTERTYPES = [{ type: "pc" }, { type: "npc" }];
 
 const ATTACKTYPES = [{ type: "melee" }, { type: "ranged" }, { type: "spell" }];
@@ -18,19 +22,23 @@ const DAMAGETYPES = [
 	{ type: "thunder" },
 ];
 
-/**************************
- * OTHER GLOBAL VARIABLES *
- **************************/
+/************************
+ * INITIATIVE VARIABLES *
+ ************************/
 let unOrderedInit = [];
 let orderedInit = [];
-//let currentInit = 0;
 let currentPlayer = "";
-
-let dmgList = [];
-
-// Define a global currentInit variable
 let currentInit = 0;
 
+/********************
+ * DAMAGE VARIABLES *
+ ********************/
+let dmgList = [];
+
+/***************************
+ * LOCAL STORAGE FUNCTIONS *
+ ***************************/
+/******** LOCAL STORAGE currentInit ********/
 function loadLocalStorageInitPosition() {
 	// Check local storage for a previous currentInit
 	let storedCurrentInit = localStorage.getItem("currentInit");
@@ -42,9 +50,12 @@ function loadLocalStorageInitPosition() {
 	localStorage.setItem("currentInit", currentInit);
 }
 
+/******** LOCAL STORAGE orderedInit ********/
 function loadLocalStorageInitList() {
 	// Check local storage for a previous currentInit
-	let storedOrderedInit = JSON.parse(localStorage.getItem("orderedInit") || "[]");
+	let storedOrderedInit = JSON.parse(
+		localStorage.getItem("orderedInit") || "[]"
+	);
 
 	if (storedOrderedInit !== null) {
 		orderedInit = storedOrderedInit;
