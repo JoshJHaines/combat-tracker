@@ -34,9 +34,6 @@ function addToInitiativeList() {
 }
 
 function nextInit() {
-	//set the current player to the name of the CurrentInitOBJ
-	//set screen to display init
-	//then we want to increment the number for the current initiative position
 	if (currentInit < orderedInit.length - 1) {
 		currentInit++;
 		localStorage.setItem("currentInit", currentInit);
@@ -54,7 +51,7 @@ function resetInit() {
 	orderedInit = [];
 	currentPlayer = "None";
 	console.log("Ordered Init: ", orderedInit);
-	currentInit = 0;
+	currentInit = -1;
 	localStorage.setItem("currentInit", currentInit);
 	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
 	localStorage.setItem("currentPlayer", currentPlayer);
