@@ -15,46 +15,43 @@ addDamageButton.addEventListener("click", addToDamageList);
  * HELPER FUNCTIONS *
  ********************/
 function addToDamageList() {
-	// console.log("Add to Damage Tracker")
-	// console.log("Attack Successful: ", atkSuccess.value)
-	// console.log("Attack Type: ", atkType.value)
-	// console.log("Damage Inflicted: ", dmgInflicted.value)
-	// console.log("Damage Type: ", dmgType.value)
-	// console.log("Was Kill: ", killSuccess.value)
-
 	let dmgObj = {};
 	if (atkSuccess.value === "no") {
-		dmgObj.characterName = currentPlayer;
-		dmgObj.atkSuccess = atkSuccess.value;
-		dmgObj.atkType = "none";
-		dmgObj.dmg1Inflicted = 0;
-		dmgObj.dmg1Type = "none";
-		dmgObj.dmg2Inflicted = 0;
-		dmgObj.dmg2Type = "none";
-		dmgObj.killSuccess = "no";
+		dmgObj = {
+			characterName: currentPlayer,
+			atkSuccess: atkSuccess.value,
+			atkType: "none",
+			dmg1Inflicted: 0,
+			dmg1Type: "none",
+			dmg2Inflicted: 0,
+			dmg2Type: "none",
+			killSuccess: "no",
+		}	
 	} else {
 		if (dmg2Inflicted.value === ""){
-			dmgObj.characterName = currentPlayer;
-			dmgObj.atkSuccess = atkSuccess.value;
-			dmgObj.atkType = atkType.value;
-			dmgObj.dmg1Inflicted = dmg1Inflicted.value;
-			dmgObj.dmg1Type = dmg1Type.value;
-			dmgObj.dmg2Inflicted = 0;
-			dmgObj.dmg2Type = dmg2Type.value;
-			dmgObj.killSuccess = killSuccess.value;
+			dmgObj = {
+				characterName: currentPlayer,
+				atkSuccess: atkSuccess.value,
+				atkType: atkType.value,
+				dmg1Inflicted: Number(dmg1Inflicted.value),
+				dmg1Type: dmg1Type.value,
+				dmg2Inflicted: 0,
+				dmg2Type: dmg2Type.value,
+				killSuccess: killSuccess.value,
+			}
 		} else {
-			dmgObj.characterName = currentPlayer;
-			dmgObj.atkSuccess = atkSuccess.value;
-			dmgObj.atkType = atkType.value;
-			dmgObj.dmg1Inflicted = dmg1Inflicted.value;
-			dmgObj.dmg1Type = dmg1Type.value;
-			dmgObj.dmg2Inflicted = dmg2Inflicted.value;
-			dmgObj.dmg2Type = dmg2Type.value;
-			dmgObj.killSuccess = killSuccess.value;
+			dmgObj = {
+				characterName: currentPlayer,
+				atkSuccess: atkSuccess.value,
+				atkType: atkType.value,
+				dmg1Inflicted: Number(dmg1Inflicted.value),
+				dmg1Type: dmg1Type.value,
+				dmg2Inflicted: Number(dmg2Inflicted.value),
+				dmg2Type: dmg2Type.value,
+				killSuccess: killSuccess.value,
+			}
 		}
 	}
-	console.log(dmgObj);
-	//push the obj into global variable
 	dmgList.push(dmgObj);
 	console.log("full dmg lst:", dmgList);
 	localStorage.setItem("dmgList", JSON.stringify(dmgList));
