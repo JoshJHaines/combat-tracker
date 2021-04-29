@@ -44,7 +44,7 @@ function loadLocalStorageInitPosition() {
 
 function loadLocalStorageInitList() {
 	// Check local storage for a previous currentInit
-	let storedOrderedInit = localStorage.getItem("orderedInit");
+	let storedOrderedInit = JSON.parse(localStorage.getItem("orderedInit") || "[]");
 
 	if (storedOrderedInit !== null) {
 		orderedInit = storedOrderedInit;

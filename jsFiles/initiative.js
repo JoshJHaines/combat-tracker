@@ -71,7 +71,7 @@ function resetInit() {
 		"currentInitPosition"
 	).innerText = `Current Init Pos: ${localStorage.currentInit}  Current Player: ${currentPlayer}  `;
 }
-//doesnt work yet, not being called
+//doesn't work yet, not being called
 function buildInitTable(orderedInit) {
 	for (char of orderedInit) {
 		row = initTable.insertRow(0);
