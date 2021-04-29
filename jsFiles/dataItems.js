@@ -50,5 +50,5 @@ function loadLocalStorageInitList() {
 		orderedInit = storedOrderedInit;
 	}
 	// Store the new currentInit
-	localStorage.setItem("orderedInit", orderedInit);
+	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
 }

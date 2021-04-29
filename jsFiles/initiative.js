@@ -53,6 +53,10 @@ function orderInitiative(obj) {
 	//set the global arr to equal the new temp arr
 	orderedInit = newInitiative;
 	console.log("Ordered Init: ", orderedInit);
+	//store in local storage
+	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
+
+	console.log("Stored Init List: ", JSON.parse(localStorage.getItem("orderedInit") || "[]"));
 }
 
 function resetInit() {
@@ -62,6 +66,7 @@ function resetInit() {
 	console.log("Ordered Init: ", orderedInit);
 	currentInit = 0;
 	localStorage.setItem('currentInit', currentInit);
+	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
 	document.getElementById(
 		"currentInitPosition"
 	).innerText = `Current Init Pos: ${localStorage.currentInit}  Current Player: ${currentPlayer}  `;
