@@ -31,7 +31,7 @@ const DAMAGETYPES = [
 let unOrderedInit = [];
 let orderedInit = [];
 let currentPlayer = "None";
-let currentInit = 0;
+let currentInit = -1;
 
 /********************
  * DAMAGE VARIABLES *
@@ -95,7 +95,7 @@ function loadLocalStorageDMGList() {
 function resetALLdata(){
 	localStorage.orderedInit = []
 	localStorage.currentPlayer = "None";
-	localStorage.currentInit = 0;
+	localStorage.currentInit = -1;
 	localStorage.dmgList = [];
 	window.location.reload();
 }
