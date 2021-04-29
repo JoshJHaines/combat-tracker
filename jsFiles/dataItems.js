@@ -27,7 +27,7 @@ const DAMAGETYPES = [
  ************************/
 let unOrderedInit = [];
 let orderedInit = [];
-let currentPlayer = "";
+let currentPlayer = "None";
 let currentInit = 0;
 
 /********************
@@ -62,4 +62,16 @@ function loadLocalStorageInitList() {
 	}
 	// Store the new currentInit
 	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
+}
+
+/******** LOCAL STORAGE currentPlayer ********/
+function loadLocalStorageCurrentPlayer() {
+	// Check local storage for a previous currentInit
+	let storedCurrentPlayer = localStorage.getItem("currentPlayer");
+
+	if (storedCurrentPlayer !== null) {
+		currentPlayer = storedCurrentPlayer;
+	}
+	// Store the new currentInit
+	localStorage.setItem("currentPlayer", currentPlayer);
 }

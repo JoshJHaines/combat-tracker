@@ -9,10 +9,6 @@ const initiative = document.getElementById("initiative");
 const initTable = document.getElementById("initTable");
 const nextInitButton = document.getElementById("nextInit");
 const resetInitButton = document.getElementById("resetInit");
-
-document.getElementById(
-	"currentInitPosition"
-).innerText = `Current Init Pos: ${currentInit}`;
 /******************
  * EVENT LISTENER *
  ******************/
@@ -38,28 +34,8 @@ function addToInitiativeList() {
 }
 
 function nextInit() {
-	console.log(
-		"Current local-Init = ",
-		currentInit + 1,
-		"Current Players Turn: ",
-		orderedInit[currentInit].characterName
-	);
-	console.log(
-		"Current storedInit = ",
-		Number(localStorage.currentInit) + 1,
-		"Current Players Turn: ",
-		orderedInit[currentInit].characterName
-	);
-
 	//set the current player to the name of the CurrentInitOBJ
-	currentPlayer = orderedInit[currentInit].characterName;
-
 	//set screen to display init
-	document.getElementById(
-		"currentInitPosition"
-	).innerText = `Current Init Pos: ${
-		Number(localStorage.currentInit) + 1
-	}  Current Player: ${currentPlayer}  `;
 	//then we want to increment the number for the current initiative position
 	if (currentInit < orderedInit.length - 1) {
 		currentInit++;
@@ -68,19 +44,21 @@ function nextInit() {
 		currentInit = 0;
 		localStorage.setItem("currentInit", currentInit);
 	}
+	currentPlayer = orderedInit[currentInit].characterName;
+	localStorage.setItem("currentPlayer", currentPlayer)
+	displayInitiativeStr();
 }
 
 function resetInit() {
 	unOrderedInit = [];
 	orderedInit = [];
-	currentPlayer = "";
+	currentPlayer = "None";
 	console.log("Ordered Init: ", orderedInit);
 	currentInit = 0;
 	localStorage.setItem("currentInit", currentInit);
 	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
-	document.getElementById(
-		"currentInitPosition"
-	).innerText = `Current Init Pos: ${localStorage.currentInit}  Current Player: ${currentPlayer}  `;
+	localStorage.setItem("currentPlayer", currentPlayer);
+	displayInitiativeStr();
 }
 /*******************
  * HELPER FUNCTION *
@@ -110,16 +88,6 @@ function orderInitiative(obj) {
 	);
 }
 
-//doesn't work yet, not being called
-function buildInitTable(orderedInit) {
-	for (char of orderedInit) {
-		row = initTable.insertRow(0);
-		nameCell = row.insertCell(0);
-		charTypeCell = row.insertCell(1);
-		initRollCell = row.insertCell(2);
-
-		nameCell.innerHTML = `${char.characterName}`;
-		charTypeCell.innerHTML = `${char.characterType}`;
-		initRollCell.innerHTML = `${char.initiativeRoll}`;
-	}
+function displayInitiativeStr(){
+	document.getElementById("currentInitPosition").innerText = `Current Init Pos: ${currentInit +1}  Current Player: ${currentPlayer}`
 }

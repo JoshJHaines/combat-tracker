@@ -18,3 +18,6 @@ createDropDown(DAMAGETYPES, dmg1TypeSelect);
 createDropDown(DAMAGETYPES, dmg2TypeSelect);
 loadLocalStorageInitPosition(currentInit);
 loadLocalStorageInitList(orderedInit)
+loadLocalStorageCurrentPlayer(currentPlayer)
+
+displayInitiativeStr()
