@@ -23,10 +23,11 @@ resetInitButton.addEventListener("click", resetInit);
 
 function addToInitiativeList() {
 	//create an object with the input values in initiative tracker fields
-	let initiativeObj = {};
-	initiativeObj.characterName = characterName.value;
-	initiativeObj.characterType = characterType.value;
-	initiativeObj.initiativeRoll = initiative.value;
+	let initiativeObj = {
+		characterName: characterName.value,
+		characterType: characterType.value,
+		initiativeRoll: Number(initiative.value),
+	};
 	//push the obj into global variable
 	unOrderedInit.push(initiativeObj);
 	//use function to order the initiative
