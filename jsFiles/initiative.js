@@ -21,9 +21,9 @@ initiativeButton.addEventListener("click", addToInitiativeList);
 nextInitButton.addEventListener("click", nextInit);
 resetInitButton.addEventListener("click", resetInit);
 
-/*************
- * FUNCTIONS *
- *************/
+/******************
+ * CLICK FUNCTION *
+ ******************/
 
 function addToInitiativeList() {
 	//create an object with the input values in initiative tracker fields
@@ -35,54 +35,6 @@ function addToInitiativeList() {
 	unOrderedInit.push(initiativeObj);
 	//use function to order the initiative
 	orderInitiative(unOrderedInit);
-}
-
-function orderInitiative(obj) {
-	//create temp arr
-	newInitiative = [];
-
-	//sort through by the initiative roll
-	obj.sort((a, b) => {
-		return parseInt(b.initiativeRoll - a.initiativeRoll);
-	});
-	//once sorted we want to place each into the new arr
-	obj.forEach((e) => {
-		newInitiative.push(e);
-		//console.log(`${e.characterName} ${e.characterType} ${e.initiativeRoll}`)
-	});
-	//set the global arr to equal the new temp arr
-	orderedInit = newInitiative;
-	console.log("Ordered Init: ", orderedInit);
-	//store in local storage
-	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
-
-	console.log("Stored Init List: ", JSON.parse(localStorage.getItem("orderedInit") || "[]"));
-}
-
-function resetInit() {
-	unOrderedInit = [];
-	orderedInit = [];
-	currentPlayer = ""
-	console.log("Ordered Init: ", orderedInit);
-	currentInit = 0;
-	localStorage.setItem('currentInit', currentInit);
-	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
-	document.getElementById(
-		"currentInitPosition"
-	).innerText = `Current Init Pos: ${localStorage.currentInit}  Current Player: ${currentPlayer}  `;
-}
-//doesn't work yet, not being called
-function buildInitTable(orderedInit) {
-	for (char of orderedInit) {
-		row = initTable.insertRow(0);
-		nameCell = row.insertCell(0);
-		charTypeCell = row.insertCell(1);
-		initRollCell = row.insertCell(2);
-
-		nameCell.innerHTML = `${char.characterName}`;
-		charTypeCell.innerHTML = `${char.characterType}`;
-		initRollCell.innerHTML = `${char.initiativeRoll}`;
-	}
 }
 
 function nextInit() {
@@ -115,3 +67,55 @@ function nextInit() {
 		localStorage.setItem('currentInit', currentInit);
 	}
 }
+
+function resetInit() {
+	unOrderedInit = [];
+	orderedInit = [];
+	currentPlayer = ""
+	console.log("Ordered Init: ", orderedInit);
+	currentInit = 0;
+	localStorage.setItem('currentInit', currentInit);
+	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
+	document.getElementById(
+		"currentInitPosition"
+	).innerText = `Current Init Pos: ${localStorage.currentInit}  Current Player: ${currentPlayer}  `;
+}
+/*******************
+ * HELPER FUNCTION *
+ *******************/
+function orderInitiative(obj) {
+	//create temp arr
+	newInitiative = [];
+
+	//sort through by the initiative roll
+	obj.sort((a, b) => {
+		return parseInt(b.initiativeRoll - a.initiativeRoll);
+	});
+	//once sorted we want to place each into the new arr
+	obj.forEach((e) => {
+		newInitiative.push(e);
+		//console.log(`${e.characterName} ${e.characterType} ${e.initiativeRoll}`)
+	});
+	//set the global arr to equal the new temp arr
+	orderedInit = newInitiative;
+	console.log("Ordered Init: ", orderedInit);
+	//store in local storage
+	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
+
+	console.log("Stored Init List: ", JSON.parse(localStorage.getItem("orderedInit") || "[]"));
+}
+
+//doesn't work yet, not being called
+function buildInitTable(orderedInit) {
+	for (char of orderedInit) {
+		row = initTable.insertRow(0);
+		nameCell = row.insertCell(0);
+		charTypeCell = row.insertCell(1);
+		initRollCell = row.insertCell(2);
+
+		nameCell.innerHTML = `${char.characterName}`;
+		charTypeCell.innerHTML = `${char.characterType}`;
+		initRollCell.innerHTML = `${char.initiativeRoll}`;
+	}
+}
+
