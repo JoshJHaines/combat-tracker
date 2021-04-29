@@ -1,3 +1,6 @@
+const resetAllButton = document.getElementById("resetAll");
+
+resetAllButton.addEventListener("click", resetALLdata)
 /*****************
  * STANDARD DATA *
  *****************/
@@ -86,4 +89,13 @@ function loadLocalStorageDMGList() {
 	}
 	// Store the new currentInit
 	localStorage.setItem("dmgList", JSON.stringify(dmgList));
+}
+
+
+function resetALLdata(){
+	localStorage.orderedInit = []
+	localStorage.currentPlayer = "None";
+	localStorage.currentInit = 0;
+	localStorage.dmgList = [];
+	window.location.reload();
 }
