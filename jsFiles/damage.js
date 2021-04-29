@@ -33,14 +33,25 @@ function addToDamageList() {
 		dmgObj.dmg2Type = "none";
 		dmgObj.killSuccess = "no";
 	} else {
-		dmgObj.characterName = currentPlayer;
-		dmgObj.atkSuccess = atkSuccess.value;
-		dmgObj.atkType = atkType.value;
-		dmgObj.dmg1Inflicted = dmg1Inflicted.value;
-		dmgObj.dmg1Type = dmg1Type.value;
-		dmgObj.dmg2Inflicted = dmg2Inflicted.value;
-		dmgObj.dmg2Type = dmg2Type.value;
-		dmgObj.killSuccess = killSuccess.value;
+		if (dmg2Inflicted.value === ""){
+			dmgObj.characterName = currentPlayer;
+			dmgObj.atkSuccess = atkSuccess.value;
+			dmgObj.atkType = atkType.value;
+			dmgObj.dmg1Inflicted = dmg1Inflicted.value;
+			dmgObj.dmg1Type = dmg1Type.value;
+			dmgObj.dmg2Inflicted = 0;
+			dmgObj.dmg2Type = dmg2Type.value;
+			dmgObj.killSuccess = killSuccess.value;
+		} else {
+			dmgObj.characterName = currentPlayer;
+			dmgObj.atkSuccess = atkSuccess.value;
+			dmgObj.atkType = atkType.value;
+			dmgObj.dmg1Inflicted = dmg1Inflicted.value;
+			dmgObj.dmg1Type = dmg1Type.value;
+			dmgObj.dmg2Inflicted = dmg2Inflicted.value;
+			dmgObj.dmg2Type = dmg2Type.value;
+			dmgObj.killSuccess = killSuccess.value;
+		}
 	}
 	console.log(dmgObj);
 	//push the obj into global variable
