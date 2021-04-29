@@ -45,7 +45,7 @@ function nextInit() {
 		localStorage.setItem("currentInit", currentInit);
 	}
 	currentPlayer = orderedInit[currentInit].characterName;
-	localStorage.setItem("currentPlayer", currentPlayer)
+	localStorage.setItem("currentPlayer", currentPlayer);
 	displayInitiativeStr();
 }
 
@@ -88,6 +88,10 @@ function orderInitiative(obj) {
 	);
 }
 
-function displayInitiativeStr(){
-	document.getElementById("currentInitPosition").innerText = `Current Init Pos: ${currentInit +1}  Current Player: ${currentPlayer}`
+function displayInitiativeStr() {
+	document.getElementById(
+		"currentInitPosition"
+	).innerText = `Current Init Pos: ${
+		currentInit + 1
+	}  Current Player: ${currentPlayer}`;
 }

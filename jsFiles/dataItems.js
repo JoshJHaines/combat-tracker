@@ -75,3 +75,15 @@ function loadLocalStorageCurrentPlayer() {
 	// Store the new currentInit
 	localStorage.setItem("currentPlayer", currentPlayer);
 }
+
+/******** LOCAL STORAGE dmgList ********/
+function loadLocalStorageDMGList() {
+	// Check local storage for a previous currentInit
+	let storedDmgList = JSON.parse(localStorage.getItem("dmgList") || "[]");
+
+	if (storedDmgList !== null) {
+		dmgList = storedDmgList;
+	}
+	// Store the new currentInit
+	localStorage.setItem("dmgList", JSON.stringify(dmgList));
+}

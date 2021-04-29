@@ -46,4 +46,5 @@ function addToDamageList() {
 	//push the obj into global variable
 	dmgList.push(dmgObj);
 	console.log("full dmg lst:", dmgList);
+	localStorage.setItem("dmgList", JSON.stringify(dmgList));
 }
