@@ -1,10 +1,14 @@
 const scoreBoardTable = document.getElementById("scoreBoardTable")
 const tableRow = document.querySelectorAll(".row")
-const pcNameColumn = document.getElementsByClassName("pcNameColumn")
-const totalDmgInfColumn = document.getElementsByClassName("totalDmgInfColumn")
-const totalKillsColumn = document.getElementsByClassName("totalKillsColumn")
+const pcNameColumn = document.querySelectorAll(".pc")
+const totalDmgInfColumn = document.getElementsByClassName("totalDMG")
+const totalKillsColumn = document.querySelectorAll(".totallKILLS")
 
+//totalDmgInfColumn.addEventListener("click", testFunction())
 
+function testFunction(){
+    console.log("fuck")
+}
 /***************
  * BUILD TABLE *
  ***************/
@@ -13,12 +17,14 @@ const totalKillsColumn = document.getElementsByClassName("totalKillsColumn")
  * FILL IN STATIC TABLE *
  ************************/
 for (i=0; i<tableRow.length; i++){
-    player = PLAYERCHARACTERS[i].name
-    totalDmgInf = addARRvalues(PLAYERCHARACTERS[i].dmgInf)
-    totalKills = addARRvalues(PLAYERCHARACTERS[i].kills)
-    tableRow[i].innerHTML += `<td>${player}</td>`
-    tableRow[i].innerHTML += `<td>${totalDmgInf}</td>`
-    tableRow[i].innerHTML += `<td>${totalKills}</td>`
+    const player = PLAYERCHARACTERS[i].name
+    const dmgArr = PLAYERCHARACTERS[i].dmgInf
+    const killArr = PLAYERCHARACTERS[i].kills
+    const totalDmgInf = addARRvalues(dmgArr)
+    const totalKills = addARRvalues(killArr)
+    tableRow[i].innerHTML += `<td class="pc">${player}</td>`
+    tableRow[i].innerHTML += `<td class="totalDMG">${totalDmgInf}</td>`
+    tableRow[i].innerHTML += `<td class="totallKILLS">${totalKills}</td>`
 }
 /**********************
  * ADD DMG DATA TO PC *
@@ -54,6 +60,11 @@ function addARRvalues(arr){
     for(ind of arr){
         arrSum+=ind
     }
-    console.log(arrSum)
     return arrSum
+}
+
+function updateTable(){
+    for (i=0; i<totalDmgInfColumn.length ; i++){
+        totalDmgInfColumn[i].innerText = 'dog'
+    }
 }
