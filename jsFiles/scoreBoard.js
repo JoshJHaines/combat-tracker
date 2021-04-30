@@ -1,4 +1,11 @@
-function updateScore(dmgObj){
+
+
+
+
+/**********************
+ * ADD DMG DATA TO PC *
+ **********************/
+function updatePlayerScoredata(dmgObj){
     //take in dmgObj before pushed into dmgList
     //loop though Player Characters Obj
     for (pc of PLAYERCHARACTERS){
@@ -18,4 +25,16 @@ function updateScore(dmgObj){
     console.log("Players with damage?: ",PLAYERCHARACTERS)
     localStorage.setItem("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS))
     console.log (`${PLAYERCHARACTERS[0].name}: dmgInf: ${PLAYERCHARACTERS[0].dmgInf}`)
+}
+
+
+/*******************
+ * HELPER FUNCTION *
+ *******************/
+function addARRvalues(arr){
+    arrSum = 0
+    for(ind of arr){
+        arrSum+=ind
+    }
+    console.log(arrSum)
 }

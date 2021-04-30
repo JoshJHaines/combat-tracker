@@ -52,7 +52,7 @@ function addToDamageList() {
 			}
 		}
 	}
-	updateScore(dmgObj)
+	updatePlayerScoredata(dmgObj)
 	dmgList.push(dmgObj);
 	console.log("full dmg lst:", dmgList);
 	localStorage.setItem("dmgList", JSON.stringify(dmgList));
