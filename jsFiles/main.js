@@ -20,6 +20,7 @@ loadLocalStorageInitPosition(currentInit);
 loadLocalStorageInitList(orderedInit);
 loadLocalStorageCurrentPlayer(currentPlayer);
 loadLocalStorageDMGList(dmgList);
+loadLocalStoragePlayerCharacterList(PLAYERCHARACTERS)
 displayInitiativeStr();
 murlpe();
 DnDweapons();

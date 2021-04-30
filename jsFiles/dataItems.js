@@ -7,6 +7,34 @@ resetAllButton.addEventListener("click", resetALLdata);
  * STANDARD DATA *
  *****************/
 
+let PLAYERCHARACTERS = [
+	{
+		name: "PC1",
+		dmgInf: [],
+		kills:[]
+	},
+	{
+		name: "PC2",
+		dmgInf: [],
+		kills:[]
+	},
+	{
+		name: "PC3",
+		dmgInf: [],
+		kills:[]
+	},
+	{
+		name: "PC4",
+		dmgInf: [],
+		kills:[]
+	},
+	{
+		name: "PC5",
+		dmgInf: [],
+		kills:[]
+	}
+]
+
 const CHARACTERTYPES = [{ type: "pc" }, { type: "npc" }];
 
 const ATTACKTYPES = [{ type: "melee" }, { type: "ranged" }, { type: "spell" }];
@@ -96,6 +124,19 @@ function loadLocalStorageDMGList() {
 	// Store the new currentInit
 	localStorage.setItem("dmgList", JSON.stringify(dmgList));
 }
+
+/******** LOCAL STORAGE dmgList ********/
+function loadLocalStoragePlayerCharacterList() {
+	// Check local storage for a previous currentInit
+	let storedPLAYERCHARACTERS = JSON.parse(localStorage.getItem("PLAYERCHARACTERS") || "[]");
+
+	if (storedPLAYERCHARACTERS !== null) {
+		PLAYERCHARACTERS = storedPLAYERCHARACTERS;
+	}
+	// Store the new currentInit
+	localStorage.setItem("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS));
+}
+
 
 function resetALLdata() {
 	localStorage.orderedInit = [];
