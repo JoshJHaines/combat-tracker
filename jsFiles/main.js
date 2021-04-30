@@ -23,3 +23,4 @@ loadLocalStorageDMGList(dmgList);
 displayInitiativeStr();
 murlpe()
 DnDweapons()
+DnDmonsters()

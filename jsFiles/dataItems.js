@@ -1,56 +1,81 @@
 const resetAllButton = document.getElementById("resetAll");
 
-resetAllButton.addEventListener("click", resetALLdata)
+resetAllButton.addEventListener("click", resetALLdata);
 
-const APItoken = `rNcvKrCyAO_7NPzYh9ev56Q0UXSGul2ttWFRtMVfoOc`
-const dogShitButton = document.getElementById("dogShit")
-const plantAPI = `https://trefle.io/api/v1/plants?${APItoken}`
+const APItoken = `rNcvKrCyAO_7NPzYh9ev56Q0UXSGul2ttWFRtMVfoOc`;
+const dogShitButton = document.getElementById("dogShit");
+const plantAPI = `https://trefle.io/api/v1/plants?${APItoken}`;
 
-const DnDapi = `https://www.dnd5eapi.co/api/races/`
-const DnDweaponAPI = 'https://api.open5e.com/weapons/'
+const DnDapi = `https://www.dnd5eapi.co/api/races/`;
+const DnDmonstersAPI = `https://www.dnd5eapi.co/api/monsters/`;
+const DnDweaponAPI = "https://api.open5e.com/weapons/";
 
-dogShitButton.addEventListener("click", murlpe)
+dogShitButton.addEventListener("click", murlpe);
 
-function murlpe(){
-	fetch(DnDapi) 
-		.then((response)=> response.json())
-			.then((data)=>{
-				console.log(data.results)
-				console.log(data.results[0].index)
-				for (i = 0; i < data.results.length; i++){
-					raceOBJ = {
-						index: data.results[i].index,
-						name: data.results[i].name
-					}
-					RACES.push(raceOBJ)
-				}
-			})
-		// console.log(RACES)
+function murlpe() {
+	fetch(DnDapi)
+		.then((response) => response.json())
+		.then((data) => {
+			// console.log(data.results)
+			// console.log(data.results[0].index)
+			for (i = 0; i < data.results.length; i++) {
+				raceOBJ = {
+					index: data.results[i].index,
+					name: data.results[i].name,
+				};
+				RACES.push(raceOBJ);
+			}
+		});
+	console.log("races   ", RACES);
 }
 
-function DnDweapons(){
-	fetch(DnDweaponAPI) 
-		.then((response)=> response.json())
-			.then((data)=>{
-				console.log(data.results)
-				// console.log(data.results[0].index)
-				// for (i = 0; i < data.results.length; i++){
-				// 	raceOBJ = {
-				// 		index: data.results[i].index,
-				// 		name: data.results[i].name
-				// 	}
-				// 	RACES.push(raceOBJ)
-				// }
-			})
+function DnDmonsters() {
+	fetch(DnDmonstersAPI)
+		.then((response) => response.json())
+		.then((data) => {
+			//console.log(data.results)
+			// console.log(data.results[0].index)
+			for (i = 0; i < data.results.length-1; i++) {
+				fetch(DnDmonstersAPI + data.results[i].index)
+					.then((response) => response.json())
+					.then((data) => {
+						//console.log(data);
+						monsterOBJ = {
+							index: data.index,
+							name: data.name,
+							armor_class: data.armor_class,
+							hit_points: data.hit_points,
+						};
+						MONSTERS.push(monsterOBJ);
+					});
+			}
+		});
+	console.log("monsters   ", MONSTERS);
 }
 
-
+function DnDweapons() {
+	fetch(DnDweaponAPI)
+		.then((response) => response.json())
+		.then((data) => {
+			//console.log(data.results)
+			// console.log(data.results[0].index)
+			// for (i = 0; i < data.results.length; i++){
+			// 	raceOBJ = {
+			// 		index: data.results[i].index,
+			// 		name: data.results[i].name
+			// 	}
+			// 	RACES.push(raceOBJ)
+			// }
+		});
+}
 
 /*****************
  * STANDARD DATA *
  *****************/
 
-const RACES = []
+const RACES = [];
+
+const MONSTERS = [];
 
 const CHARACTERTYPES = [{ type: "pc" }, { type: "npc" }];
 
@@ -138,9 +163,8 @@ function loadLocalStorageDMGList() {
 	localStorage.setItem("dmgList", JSON.stringify(dmgList));
 }
 
-
-function resetALLdata(){
-	localStorage.orderedInit = []
+function resetALLdata() {
+	localStorage.orderedInit = [];
 	localStorage.currentPlayer = "None";
 	localStorage.currentInit = -1;
 	localStorage.dmgList = [];
