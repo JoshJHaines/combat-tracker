@@ -1,7 +1,25 @@
+const scoreBoardTable = document.getElementById("scoreBoardTable")
+const tableRow = document.querySelectorAll(".row")
+const pcNameColumn = document.getElementsByClassName("pcNameColumn")
+const totalDmgInfColumn = document.getElementsByClassName("totalDmgInfColumn")
+const totalKillsColumn = document.getElementsByClassName("totalKillsColumn")
 
 
+/***************
+ * BUILD TABLE *
+ ***************/
 
-
+/************************
+ * FILL IN STATIC TABLE *
+ ************************/
+for (i=0; i<tableRow.length; i++){
+    player = PLAYERCHARACTERS[i].name
+    totalDmgInf = addARRvalues(PLAYERCHARACTERS[i].dmgInf)
+    totalKills = addARRvalues(PLAYERCHARACTERS[i].kills)
+    tableRow[i].innerHTML += `<td>${player}</td>`
+    tableRow[i].innerHTML += `<td>${totalDmgInf}</td>`
+    tableRow[i].innerHTML += `<td>${totalKills}</td>`
+}
 /**********************
  * ADD DMG DATA TO PC *
  **********************/
@@ -37,4 +55,5 @@ function addARRvalues(arr){
         arrSum+=ind
     }
     console.log(arrSum)
+    return arrSum
 }
