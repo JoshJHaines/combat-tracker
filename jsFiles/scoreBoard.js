@@ -42,7 +42,7 @@ function updatePlayerScoredata(dmgObj){
     }
     console.log("Players with damage?: ",PLAYERCHARACTERS)
     localStorage.setItem("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS))
-    console.log (`${PLAYERCHARACTERS[0].name}: dmgInf: ${PLAYERCHARACTERS[0].dmgInf}`)
+    // console.log (`${PLAYERCHARACTERS[0].name}: dmgInf: ${PLAYERCHARACTERS[0].dmgInf}`)
 }
 
 

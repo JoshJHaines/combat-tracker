@@ -143,5 +143,6 @@ function resetALLdata() {
 	localStorage.currentPlayer = "None";
 	localStorage.currentInit = -1;
 	localStorage.dmgList = [];
+	// localStorage.PLAYERCHARACTERS = ("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS))
 	window.location.reload();
 }
