@@ -1,9 +1,56 @@
 const resetAllButton = document.getElementById("resetAll");
 
 resetAllButton.addEventListener("click", resetALLdata)
+
+const APItoken = `rNcvKrCyAO_7NPzYh9ev56Q0UXSGul2ttWFRtMVfoOc`
+const dogShitButton = document.getElementById("dogShit")
+const plantAPI = `https://trefle.io/api/v1/plants?${APItoken}`
+
+const DnDapi = `https://www.dnd5eapi.co/api/races/`
+const DnDweaponAPI = 'https://api.open5e.com/weapons/'
+
+dogShitButton.addEventListener("click", murlpe)
+
+function murlpe(){
+	fetch(DnDapi) 
+		.then((response)=> response.json())
+			.then((data)=>{
+				console.log(data.results)
+				console.log(data.results[0].index)
+				for (i = 0; i < data.results.length; i++){
+					raceOBJ = {
+						index: data.results[i].index,
+						name: data.results[i].name
+					}
+					RACES.push(raceOBJ)
+				}
+			})
+		// console.log(RACES)
+}
+
+function DnDweapons(){
+	fetch(DnDweaponAPI) 
+		.then((response)=> response.json())
+			.then((data)=>{
+				console.log(data.results)
+				// console.log(data.results[0].index)
+				// for (i = 0; i < data.results.length; i++){
+				// 	raceOBJ = {
+				// 		index: data.results[i].index,
+				// 		name: data.results[i].name
+				// 	}
+				// 	RACES.push(raceOBJ)
+				// }
+			})
+}
+
+
+
 /*****************
  * STANDARD DATA *
  *****************/
+
+const RACES = []
 
 const CHARACTERTYPES = [{ type: "pc" }, { type: "npc" }];
 
