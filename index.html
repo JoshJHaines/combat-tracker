@@ -21,7 +21,10 @@
             <div id="init-input">
                 <div id="input">
                     <div id="input-top">
-                        <div id="pc-type"></div>
+                        <div id="pc-type">
+                            <label for="chartype">Type:</label>
+                            <select name="characterType" id="chartype"></select>
+                        </div>
                         <div id="init-num">
                             <label for="initiative">Init Roll:</label>
                             <input type="number" class="numInput" id="initiative">
@@ -50,8 +53,7 @@
             <!--
             <label for="initiative">Init Roll:</label>
             <input type="number" class="numInput" id="initiative">
-            <label for="chartype">Type:</label>
-            <select name="characterType" id="chartype">
+            
 
             <button id="resetInit">Reset Initiative</button>
         </div> -->
@@ -84,9 +86,7 @@
                 <option value="yes">YES</option>
             </select>
             <input type="submit" id="addToDmg" value="Add Damage">
-
         </div>
-                
     </div>
     <div id="bottom" class="main-section">
         <div id="score-board" class="left-side sub-main">

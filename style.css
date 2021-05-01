@@ -61,52 +61,44 @@ h3 {
 /* input section */
 #init-input {
 	width: 100%;
-	height: 90px;
+	height: 60px;
 	display: flex;
-	background-color: blue;
 }
 #input {
 	width: 70%;
 	height: 100%;
-	background-color:saddlebrown
 }
 
 #input-top {
 	width: 100%;
 	height: 50%;
 	display: flex;
-	background-color: red;
 }
 
 #pc-type {
 	height: 100%;
 	width: 50%;
-	background-color: yellowgreen;
 }
 #init-num {
 	height: 100%;
 	width: 50%;
-	background-color: purple;
 }
 
 #input-bottom {
 	width: 100%;
 	height: 50%;
-	background-color: blue;
 }
 
 
 #add-button {
 	width: 30%;
 	height: 100%;
-	background-color:pink
 }
 
 /* intiative display section */
 #current-init {
 	width: 100%;
 	height: 90px;
-	background-color: purple;
 }
 
 
