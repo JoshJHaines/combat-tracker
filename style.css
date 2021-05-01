@@ -38,16 +38,110 @@ h3 {
 	/* -webkit-text-stroke: 1px var(--color1); */
 }
 
-/* .numInput {
+.numInput {
     width: 20px;
-} */
+}
 
 #top {
 	background-color: var(--color7);
 }
+
 #bottom {
-	background-color: var(--color3);
+	background-color: purple;
 }
+/* ****************** */
+/* Initiative section */
+/* ****************** */
+#init-title {
+	width: 100%;
+	height: 30px;
+	background-color: var(--color5);
+}
+
+/* input section */
+#init-input {
+	width: 100%;
+	height: 90px;
+	display: flex;
+	background-color: blue;
+}
+#input {
+	width: 70%;
+	height: 100%;
+	background-color:saddlebrown
+}
+
+#input-top {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	background-color: red;
+}
+
+#pc-type {
+	height: 100%;
+	width: 50%;
+	background-color: yellowgreen;
+}
+#init-num {
+	height: 100%;
+	width: 50%;
+	background-color: purple;
+}
+
+#input-bottom {
+	width: 100%;
+	height: 50%;
+	background-color: blue;
+}
+
+
+#add-button {
+	width: 30%;
+	height: 100%;
+	background-color:pink
+}
+
+/* intiative display section */
+#current-init {
+	width: 100%;
+	height: 90px;
+	background-color: purple;
+}
+
+
+/* bottom buttons  section */
+#cycle-reset {
+	width: 100%;
+	height: 30px;
+	display: flex;
+	background-color: red;
+}
+#next-button {
+	width: 85%;
+	height: 30px;
+}
+#reset-button {
+	width: auto;
+	height: 30px;
+}
+
+.go-button {
+	width: 100%;
+	height: 100%;
+	background-color: var(--color6);
+	color: var(--color2);
+}
+
+.button-o-doom {
+	width: 100%;
+	height: 100%;
+	background-color: var(--color2);
+	color: var(--color1);
+	font-size: 65%;
+}
+
+
 
 .sub-main {
 	width: 45%;
