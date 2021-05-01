@@ -22,6 +22,7 @@ loadLocalStorageCurrentPlayer(currentPlayer);
 loadLocalStorageDMGList(dmgList);
 loadLocalStoragePlayerCharacterList(PLAYERCHARACTERS)
 displayInitiativeStr();
+loadTable()
 murlpe();
 DnDweapons();
 DnDmonsters();

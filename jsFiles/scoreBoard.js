@@ -16,15 +16,19 @@ function testFunction(){
 /************************
  * FILL IN STATIC TABLE *
  ************************/
-for (i=0; i<tableRow.length; i++){
-    const player = PLAYERCHARACTERS[i].name
-    const dmgArr = PLAYERCHARACTERS[i].dmgInf
-    const killArr = PLAYERCHARACTERS[i].kills
-    const totalDmgInf = addARRvalues(dmgArr)
-    const totalKills = addARRvalues(killArr)
-    tableRow[i].innerHTML += `<td class="pc">${player}</td>`
-    tableRow[i].innerHTML += `<td class="totalDMG">${totalDmgInf}</td>`
-    tableRow[i].innerHTML += `<td class="totallKILLS">${totalKills}</td>`
+function loadTable(){
+    for (i=0; i<tableRow.length; i++){
+        const player = PLAYERCHARACTERS[i].name
+        const dmgArr = PLAYERCHARACTERS[i].dmgInf
+        const killArr = PLAYERCHARACTERS[i].kills
+        const totalDmgInf = addARRvalues(dmgArr)
+        const totalKills = addARRvalues(killArr)
+        console.log("arr: ", killArr)
+        console.log("with function:", totalDmgInf)
+        tableRow[i].innerHTML += `<td class="pc">${player}</td>`
+        tableRow[i].innerHTML += `<td class="totalDMG">${totalDmgInf}</td>`
+        tableRow[i].innerHTML += `<td class="totallKILLS">${totalKills}</td>`
+}
 }
 /**********************
  * ADD DMG DATA TO PC *
