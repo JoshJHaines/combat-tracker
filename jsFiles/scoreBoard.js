@@ -23,8 +23,8 @@ function loadTable(){
         const killArr = PLAYERCHARACTERS[i].kills
         const totalDmgInf = addARRvalues(dmgArr)
         const totalKills = addARRvalues(killArr)
-        console.log("arr: ", killArr)
-        console.log("with function:", totalDmgInf)
+        // console.log("arr: ", killArr)
+        // console.log("with function:", totalDmgInf)
         tableRow[i].innerHTML += `<td class="pc">${player}</td>`
         tableRow[i].innerHTML += `<td class="totalDMG">${totalDmgInf}</td>`
         tableRow[i].innerHTML += `<td class="totallKILLS">${totalKills}</td>`

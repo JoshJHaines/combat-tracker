@@ -23,7 +23,7 @@ function murlpe() {
 				RACES.push(raceOBJ);
 			}
 		});
-	console.log("races   ", RACES);
+	// console.log("races   ", RACES);
 }
 
 function DnDmonsters() {
@@ -47,7 +47,7 @@ function DnDmonsters() {
 					});
 			}
 		});
-	console.log("monsters   ", MONSTERS);
+	// console.log("monsters   ", MONSTERS);
 }
 
 function DnDweapons() {
