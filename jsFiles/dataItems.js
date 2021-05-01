@@ -9,27 +9,27 @@ resetAllButton.addEventListener("click", resetALLdata);
 
 let PLAYERCHARACTERS = [
 	{
-		name: "PC1",
+		name: "Dio",
 		dmgInf: [],
 		kills:[]
 	},
 	{
-		name: "PC2",
+		name: "Osrin",
 		dmgInf: [],
 		kills:[]
 	},
 	{
-		name: "PC3",
+		name: "Lok Dar",
 		dmgInf: [],
 		kills:[]
 	},
 	{
-		name: "PC4",
+		name: "Abe",
 		dmgInf: [],
 		kills:[]
 	},
 	{
-		name: "PC5",
+		name: "Goose",
 		dmgInf: [],
 		kills:[]
 	}
@@ -130,11 +130,13 @@ function loadLocalStoragePlayerCharacterList() {
 	// Check local storage for a previous currentInit
 	let storedPLAYERCHARACTERS = JSON.parse(localStorage.getItem("PLAYERCHARACTERS") || "[]");
 
-	if (storedPLAYERCHARACTERS !== null) {
+	if (storedPLAYERCHARACTERS === null) {
+		localStorage.setItem("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS))
+	} else {
 		PLAYERCHARACTERS = storedPLAYERCHARACTERS;
 	}
 	// Store the new currentInit
-	localStorage.setItem("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS));
+	// localStorage.setItem("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS));
 }
 
 
@@ -143,6 +145,6 @@ function resetALLdata() {
 	localStorage.currentPlayer = "None";
 	localStorage.currentInit = -1;
 	localStorage.dmgList = [];
-	// localStorage.PLAYERCHARACTERS = ("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS))
+	localStorage.PLAYERCHARACTERS = ("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS))
 	window.location.reload();
 }

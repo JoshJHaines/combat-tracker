@@ -1,7 +1,7 @@
 const scoreBoardTable = document.getElementById("scoreBoardTable")
 const tableRow = document.querySelectorAll(".row")
 const pcNameColumn = document.querySelectorAll(".pc")
-const totalDmgInfColumn = document.getElementsByClassName("totalDMG")
+const totalDmgInfColumn = document.querySelectorAll(".totalDMG")
 const totalKillsColumn = document.querySelectorAll(".totallKILLS")
 
 //totalDmgInfColumn.addEventListener("click", testFunction())
@@ -30,6 +30,7 @@ function loadTable(){
         tableRow[i].innerHTML += `<td class="totallKILLS">${totalKills}</td>`
 }
 }
+
 /**********************
  * ADD DMG DATA TO PC *
  **********************/

@@ -56,4 +56,5 @@ function addToDamageList() {
 	dmgList.push(dmgObj);
 	console.log("full dmg lst:", dmgList);
 	localStorage.setItem("dmgList", JSON.stringify(dmgList));
+	window.location.reload()
 }
