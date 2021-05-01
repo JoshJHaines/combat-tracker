@@ -28,4 +28,5 @@ API calls
 
 
 ### APIs
-[DnD](https://choosealicense.com/licenses/mit/)
+[DnD5eapi](http://www.dnd5eapi.co/)
+[Open5e](http://www.open5e.com/)
