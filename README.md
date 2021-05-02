@@ -27,6 +27,6 @@ Local Storage
 API calls
 
 
-### APIs
+<!-- ### APIs
 [DnD5eapi](http://www.dnd5eapi.co/)
-[Open5e](http://www.open5e.com/)
+[Open5e](http://www.open5e.com/) -->
