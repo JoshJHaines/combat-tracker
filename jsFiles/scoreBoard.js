@@ -34,7 +34,7 @@ function loadTable(){
 /**********************
  * ADD DMG DATA TO PC *
  **********************/
-function updatePlayerScoredata(dmgObj){
+function updatePlayerScoreData(dmgObj){
     //take in dmgObj before pushed into dmgList
     //loop though Player Characters Obj
     for (pc of PLAYERCHARACTERS){
