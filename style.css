@@ -130,6 +130,8 @@ h3 {
 	background-color: var(--color6);
 	color: var(--color2);
 	min-height: 30px;
+	font-size: 22px;
+	white-space: normal;
 }
 
 .button-o-doom {
