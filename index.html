@@ -13,7 +13,7 @@
     </div>
     <div id="top" class="main-section">
         <div id="initiative-tracker" class="left-side sub-main">
-            <div id="init-title" class="title bar">
+            <div class="title-bar">
                 <h3>
                     Initiative Tracker
                 </h3>
@@ -50,41 +50,48 @@
                     <button id="resetInit" class="button-o-doom">Reset Initiative</button>
                 </div>
             </div>
-            <!--
-            <label for="initiative">Init Roll:</label>
-            <input type="number" class="numInput" id="initiative">
-            
-
-            <button id="resetInit">Reset Initiative</button>
-        </div> -->
+        </div> 
         <div id="damage-tracker" class="right-side sub-main">
-            <h3> 
-                Damage Tracker
-            </h3>
-            <label for="atkSuccess">Attack Success: </label>
-            <select name="atkSuccess" id="atkSuccess">
-                <option value="no">NO</option>
-                <option value="yes">YES</option>
-            </select>
-            <label for="atkType">Attack Type: </label>
-            <select name="atkType" id="atkType">
-            </select>
-            <label for="dmg1Inflicted">Damage 1: </label>
-            <input type="number" class="numInput" id="dmg1Inflicted">
-            <label for="dmg1Type">Damage 1 Type: </label>
-            <select name="dmg1Type" id="dmg1Type">
-            </select>
-            <label for="dmg2Inflicted">Damage 2: </label>
-            <input type="number" class="numInput" id="dmg2Inflicted">
-            <label for="dmg2Type">Damage 2 Type: </label>
-            <select name="dmg2Type" id="dmg2Type">
+            <div class="title-bar">
+                <h3> 
+                    Damage Tracker
+                </h3>
+            </div>
+            <div>
+                <label for="atkSuccess">Success: </label>
+                <select name="atkSuccess" id="atkSuccess">
+                    <option value="no">NO</option>
+                    <option value="yes">YES</option>
+                </select>
+                <label for="killSuccess">Kill: </label>
+                <select name="killSuccess" id="killSuccess">
+                    <option value="no">NO</option>
+                    <option value="yes">YES</option>
+                </select>
+                <label for="atkType">Attack Type: </label>
+                <select name="atkType" id="atkType"></select>
+            </div>
+            <div>
+                <label for="dmg1Inflicted">Damage 1: </label>
+                <input type="number" class="numInput" id="dmg1Inflicted">
+                <label for="dmg1Type">Damage 1 Type: </label>
+                <select name="dmg1Type" id="dmg1Type"></select>
+            </div>
+            <div>
+                <label for="dmg2Inflicted">Damage 2: </label>
+                <input type="number" class="numInput" id="dmg2Inflicted">
+                <label for="dmg2Type">Damage 2 Type: </label>
+                <select name="dmg2Type" id="dmg2Type">
                 <option value="none">none</option>
-            </select>
-            <label for="killSuccess">Kill: </label>
-            <select name="killSuccess" id="killSuccess">
-                <option value="no">NO</option>
-                <option value="yes">YES</option>
-            </select>
+                </select>
+            </div>
+            <div></div>
+            
+            
+            
+            
+            
+            
             <input type="submit" id="addToDmg" value="Add Damage">
         </div>
     </div>

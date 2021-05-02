@@ -52,7 +52,7 @@ h3 {
 /* ****************** */
 /* Initiative section */
 /* ****************** */
-#init-title {
+.title-bar {
 	width: 100%;
 	height: 30px;
 	background-color: var(--color5);
@@ -156,6 +156,7 @@ h3 {
  * FOOTER/INFO AREA *
  ********************/
 #footer {
+	width: 100%;
 	background-color: var(--color1);
 	height: 5vh;
 }
@@ -173,7 +174,7 @@ h3 {
 		align-items: center;
 	}
 	.sub-main {
-		width: 90%;
+		width: 95%;
 		height: 45%;
         margin: 10px;
 	}
