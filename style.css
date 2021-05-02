@@ -13,6 +13,7 @@
 	padding: 0px;
 	border: 0px;
 }
+
 /******************
  * STATIC TOP BAR *
  ******************/
@@ -187,8 +188,23 @@ h3 {
  ********************/
 #footer {
 	width: 100%;
-	background-color: var(--color1);
+	background-color: var(--color2);
 	height: 5vh;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#footer > a{
+	text-decoration: none;
+    color: var(--color1) ;
+}
+#footer > button{	
+    color: var(--color1) ;
+	background-color: var(--color5);
 }
 
 /*****************
@@ -207,5 +223,8 @@ h3 {
 		width: 95%;
 		height: 45%;
         margin: 10px;
+	}
+	#top, #bottom {
+	height: 100vw;
 	}
 }
