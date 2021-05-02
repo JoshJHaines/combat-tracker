@@ -16,6 +16,7 @@ createDropDown(CHARACTERTYPES, characterType);
 createDropDown(ATTACKTYPES, atkTypeSelect);
 createDropDown(DAMAGETYPES, dmg1TypeSelect);
 createDropDown(DAMAGETYPES, dmg2TypeSelect);
+createDropDown(DICETYPES, diceType);
 loadLocalStorageInitPosition(currentInit);
 loadLocalStorageInitList(orderedInit);
 loadLocalStorageCurrentPlayer(currentPlayer);

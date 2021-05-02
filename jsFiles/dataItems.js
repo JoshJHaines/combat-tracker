@@ -55,6 +55,16 @@ const DAMAGETYPES = [
 	{ type: "thunder" },
 ];
 
+const DICETYPES = [
+	{ type: "d4" },
+	{ type: "d6" },
+	{ type: "d8" },
+	{ type: "d10" },
+	{ type: "d12" },
+	{ type: "d20" },
+	{ type: "d100" },
+];
+
 const RACES = [];
 
 const MONSTERS = [];

@@ -115,7 +115,36 @@
                 </tr>
             </table>
         </div>
-        <!-- <div id="dice-roller" class="right-side sub-main">Dice Roller</div> -->
+        <div id="dice-roller" class="right-side sub-main">
+            <div class="title-bar">
+                <h3> 
+                    Dice Roller
+                </h3>
+            </div>
+            <div class="dmg-section">
+                <label for="numOfDice">Num of Dice: </label>
+                <input type="number" class="numInput" id="numOfDice">
+                <label for="diceType">Type: </label>
+                <select name="diceType" id="diceType"></select>
+                <label for="mod">Roll Mod: </label>
+                <input type="number" class="numInput" id="mod">
+            </div>
+            <div class="dmg-section">
+                <input type="submit" id="rollem" class="go-button" value="Roll'em Daddy">
+            </div>
+            <div class="dmg-section" id="roll-output">
+                <div id="dice-arr">
+                    <p>DICE ROLL</p>
+                </div>
+                <div id="mod-box">
+                    <p>ROLL MODIFIER</p>
+                </div>
+                <div id="final-roll">
+                    <p>FINAL ROLL</p>
+                </div>
+            </div>
+            <div class="dmg-section">
+            </div>
         </div>
     <div id="footer">
         <a href="https://github.com/ci-wdi-900/final-project">Final Reqs</a>
@@ -130,6 +159,7 @@
     <script src="jsFiles/initiative.js"></script>
     <script src="jsFiles/scoreBoard.js"></script>
     <script src="jsFiles/damage.js"></script>
+    <script src="jsFiles/diceRoller.js"></script>
     <script src="jsFiles/main.js"></script>
 </body>
 </html>
