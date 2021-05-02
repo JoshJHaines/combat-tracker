@@ -57,7 +57,7 @@
                     Damage Tracker
                 </h3>
             </div>
-            <div>
+            <div class="dmg-section">
                 <label for="atkSuccess">Success: </label>
                 <select name="atkSuccess" id="atkSuccess">
                     <option value="no">NO</option>
@@ -71,13 +71,13 @@
                 <label for="atkType">Attack Type: </label>
                 <select name="atkType" id="atkType"></select>
             </div>
-            <div>
+            <div class="dmg-section">
                 <label for="dmg1Inflicted">Damage 1: </label>
                 <input type="number" class="numInput" id="dmg1Inflicted">
                 <label for="dmg1Type">Damage 1 Type: </label>
                 <select name="dmg1Type" id="dmg1Type"></select>
             </div>
-            <div>
+            <div class="dmg-section">
                 <label for="dmg2Inflicted">Damage 2: </label>
                 <input type="number" class="numInput" id="dmg2Inflicted">
                 <label for="dmg2Type">Damage 2 Type: </label>
@@ -85,21 +85,18 @@
                 <option value="none">none</option>
                 </select>
             </div>
-            <div></div>
-            
-            
-            
-            
-            
-            
-            <input type="submit" id="addToDmg" value="Add Damage">
+            <div class="dmg-section">
+                <input type="submit" id="addToDmg" class="go-button" value="Add Damage">
+            </div>
         </div>
     </div>
     <div id="bottom" class="main-section">
         <div id="score-board" class="left-side sub-main">
-            <h3>
-                Scoreboard
-            </h3>
+            <div class="title-bar">
+                <h3>
+                    Scoreboard
+                </h3>
+            </div>
             <table id="scoreBoardTable">
                 <tr>
                     <th>PC</th>
