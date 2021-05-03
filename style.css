@@ -23,6 +23,7 @@ body{
 #header {
 	background-color: var(--color5);
 	height: 5vh;
+	display: flex;
 }
 h1 {
 	color: var(--color1);

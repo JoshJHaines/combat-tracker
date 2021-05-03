@@ -9,6 +9,8 @@ const initiative = document.getElementById("initiative");
 const initTable = document.getElementById("initTable");
 const nextInitButton = document.getElementById("nextInit");
 const resetInitButton = document.getElementById("resetInit");
+const addChar = document.getElementById("addChar")
+const addCharButton = document.getElementById("addCharButton")
 /******************
  * EVENT LISTENER *
  ******************/
@@ -16,6 +18,7 @@ const resetInitButton = document.getElementById("resetInit");
 initiativeButton.addEventListener("click", addToInitiativeList);
 nextInitButton.addEventListener("click", nextInit);
 resetInitButton.addEventListener("click", resetInit);
+addCharButton.addEventListener("click", addPC)
 
 /******************
  * CLICK FUNCTION *
@@ -57,6 +60,18 @@ function resetInit() {
 	localStorage.setItem("orderedInit", JSON.stringify(orderedInit));
 	localStorage.setItem("currentPlayer", currentPlayer);
 	displayInitiativeStr();
+}
+
+function addPC(){
+	console.log(addChar.value)
+	charObj = {
+		name: addChar.value,
+		dmgInf: [],
+		kills:[]
+	}
+	PLAYERCHARACTERS.push(charObj)
+	console.log(PLAYERCHARACTERS)
+	localStorage.setItem("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS))
 }
 /*******************
  * HELPER FUNCTION *
