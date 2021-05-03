@@ -72,6 +72,7 @@ function addPC(){
 	PLAYERCHARACTERS.push(charObj)
 	console.log(PLAYERCHARACTERS)
 	localStorage.setItem("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS))
+	window.location.reload()
 }
 /*******************
  * HELPER FUNCTION *
