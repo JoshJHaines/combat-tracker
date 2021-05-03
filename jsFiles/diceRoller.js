@@ -24,9 +24,9 @@ function rollemDaddy(){
     rollWithMod = rollSum + modifier
     console.log("Full Roll Amount: ", rollWithMod)
 
-    diceArr.innerHTML += `<h4>${fullDiceRoll}</h4>`
-    modBox.innerHTML += `<h4>${modifier}</h4>`
-    finalRoll.innerHTML += `<h2>${rollWithMod}</h2>`
+    diceArr.innerHTML = `<p>DICE ROLL</p><h4>${fullDiceRoll}</h4>`
+    modBox.innerHTML = `<p>ROLL MODIFIER</p><h4>${modifier}</h4>`
+    finalRoll.innerHTML = `<p>FINAL ROLL</p><h2>${rollWithMod}</h2>`
 
 }
 
