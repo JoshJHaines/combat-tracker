@@ -140,7 +140,7 @@ function loadLocalStoragePlayerCharacterList() {
 	// Check local storage for a previous currentInit
 	let storedPLAYERCHARACTERS = JSON.parse(localStorage.getItem("PLAYERCHARACTERS") || "[]");
 
-	if (storedPLAYERCHARACTERS === null) {
+	if (storedPLAYERCHARACTERS === []) {
 		localStorage.setItem("PLAYERCHARACTERS", JSON.stringify(PLAYERCHARACTERS))
 	} else {
 		PLAYERCHARACTERS = storedPLAYERCHARACTERS;
