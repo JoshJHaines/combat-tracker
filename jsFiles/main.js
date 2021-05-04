@@ -4,7 +4,7 @@
 function createDropDown(dataSet, listenter) {
 	for (index of dataSet) {
 		let option = document.createElement("option");
-		option.text = `${index.type}`;
+		option.text = `${index.type}`.toLocaleUpperCase();
 		listenter.add(option);
 	}
 }
